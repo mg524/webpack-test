@@ -15,7 +15,10 @@ module.exports = {
     plugins: [plugin1],
     module: {
         rules: [
-            {test: /\.css$/, use: ['style-loader', 'css-loader']}
+            { test: /\.css$/, use: ['style-loader', 'css-loader', 'postcss-loader'] },
+            { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
+            { test: /\.jpg|png|gif|svg$/, use: 'url-loader?limit=184,843' },
+            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
         ]
     }
 }

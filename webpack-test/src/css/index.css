@@ -1,0 +1,13 @@
+li{
+    list-style: none;
+}
+::placeholder{
+    color: red;
+}
+.box{
+    width: 500px;
+    height: 400px;
+    background-color: pink;
+    overflow: hidden;
+    background: url("../images/5a40d32b2c236.jpg");
+}
