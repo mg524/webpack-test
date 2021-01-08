@@ -1,5 +1,5 @@
 const path = require("path");
-const htmlWebpackPlugin  = require("html-webpack-plugin");//引入 plugin 对象
+const htmlWebpackPlugin = require("html-webpack-plugin");//引入 plugin 对象
 // 实例化plugin 对象
 const plugin1 = new htmlWebpackPlugin({
     template: "./src/index.html",// 指定要用到的模板文件
@@ -12,5 +12,10 @@ module.exports = {
         path: path.join(__dirname, "dist"),
         filename: "newIndex.js"
     },
-    plugins: [plugin1]
+    plugins: [plugin1],
+    module: {
+        rules: [
+            {test: /\.css$/, use: ['style-loader', 'css-loader']}
+        ]
+    }
 }
